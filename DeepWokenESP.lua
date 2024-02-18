@@ -591,6 +591,10 @@ function Library:CreateBillBoard(Int,Name,Color)
        -- local UIStoke = Instance.new("UIStroke")
         --UIStoke.Thickness = 2
        -- UIStoke.Parent = TextLabel
+       local TextLabel2 = Instance.new("TextLabel")
+       TextLabel2.Name = 'Key'
+       TextLabel2.Parent = BillboardGui 
+       TextLabel2.Text = Name
         TextLabel.Parent = BillboardGui
         TextLabel.TextSize = 8
         TextLabel.Text = Name
@@ -672,12 +676,14 @@ pcall(function()
                                 end
                             end
                             if v.Enabled then 
+                                
                                 y.Enabled = true
+
                                 y.TextLabel.TextColor3 = v.Color
                                 if v.ShowDistance then 
-                                    y.TextLabel.Text = y.TextLabel.Text..' ['..tostring(math.round(distance))..'m'..']'
+                                    y.TextLabel.Text = y['Key'].Text..' ['..tostring(math.round(distance))..'m'..']'
                                     else
-                                    y.TextLabel.Text = y.TextLabel.Text
+                                    y.TextLabel.Text = y['Key'].Text
                                  end
                                  else
                                 y.Enabled = false

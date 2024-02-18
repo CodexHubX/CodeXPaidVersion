@@ -598,7 +598,7 @@ function Library:CreateBillBoard(Int,Name,Color,IsCharacter)
         TextLabel2.Parent = BillboardGui 
         TextLabel2.Text = Name
         TextLabel.Parent = BillboardGui
-        TextLabel.TextSize = 7
+        TextLabel.TextSize = 8
         TextLabel.Text = Name
         TextLabel.TextColor3 = Color
         TextLabel.BackgroundTransparency = 1

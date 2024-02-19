@@ -325,13 +325,13 @@ pcall(function()
                                 if y:FindFirstChild('IsCharacter') then 
 
                                     if v.ShowHealth and v.ShowDistance  then
-                                        y.TextLabel.Text = '[Player]\n'..y['Key'].Text..'\n'..tostring(math.round(distance))..' studs\nHealth: '..tostring(math.round(x.Parent.Humanoid.Health))..'/'..tostring(math.round(x.Parent.Humanoid.MaxHealth))
+                                        y.TextLabel.Text = y['Key'].Text..'\n'..tostring(math.round(distance))..' studs\nHealth: '..tostring(math.round(x.Parent.Humanoid.Health))..'/'..tostring(math.round(x.Parent.Humanoid.MaxHealth))
                                         elseif v.ShowHealth then 
-                                        y.TextLabel.Text = '[Player]\n'..y['Key'].Text..'\nHealth: '..tostring(math.round(x.Parent.Humanoid.Health))..'/'..tostring(math.round(x.Parent.Humanoid.MaxHealth))
+                                        y.TextLabel.Text = y['Key'].Text..'\nHealth: '..tostring(math.round(x.Parent.Humanoid.Health))..'/'..tostring(math.round(x.Parent.Humanoid.MaxHealth))
                                         elseif v.ShowDistance then 
-                                        y.TextLabel.Text = '[Player]\n'..y['Key'].Text..'\n'..tostring(math.round(distance))..' studs'
+                                        y.TextLabel.Text = y['Key'].Text..'\n'..tostring(math.round(distance))..' studs'
                                         else
-                                        y.TextLabel.Text = '[Player]\n'..y['Key'].Text
+                                        y.TextLabel.Text = y['Key'].Text
                                     end
 
                                     

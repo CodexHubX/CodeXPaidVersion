@@ -16,7 +16,7 @@ local CODE_X = {
         box = false, 
         boxColor = Color3.fromRGB(255, 255, 255),
         healthbar = false,
-        showName = false,
+        nametag = false,
         nametagColor = Color3.fromRGB(143, 50, 232),
         distance = false,
         distanceColor = Color3.fromRGB(50, 198, 232),
@@ -133,9 +133,7 @@ function CODE_X:AddPlayer(player)
                 self._drawing._greenhealth.Visible = Settigs.healthbar;
             
                 self._drawing.helath_label.Visible = Settigs.healthtext;
-                self._drawing.name_label.Visible = Settigs.showName;
-
-               -- self._drawing.name_label.Visible = Settigs.nametag;
+                self._drawing.name_label.Visible = Settigs.nametag;
                 self._drawing.distance_label.Visible = Settigs.distance;
                 self._drawing.line.Visible = Settigs.tracer;
                 self._drawing.blackline.Visible = Settigs.tracer;
@@ -344,10 +342,3 @@ getgenv().ESPUpdate = Players.PlayerAdded:Connect(function(player)
 end);
 
 return CODE_X;
-
-
-
-
-
-
-

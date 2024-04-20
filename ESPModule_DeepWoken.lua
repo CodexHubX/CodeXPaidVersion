@@ -12,26 +12,26 @@ local CurrentCamera = workspace.CurrentCamera;
 
 local CODE_X = {
     Settigs = {
-        enabled = true,
-        box = true, 
+        enabled = false,
+        box = false, 
         boxColor = Color3.fromRGB(255, 255, 255),
-        healthbar = true,
-        nametag = true,
+        healthbar = false,
+        nametag = false,
         nametagColor = Color3.fromRGB(143, 50, 232),
-        distance = true,
+        distance = false,
         distanceColor = Color3.fromRGB(50, 198, 232),
         tracer = false,
         tracerColor = Color3.fromRGB(255, 0, 0),
-        healthtext = true,
+        healthtext = false,
         showMaxHealth = false,
         healthTextColor = Color3.fromRGB(50, 232, 50),
-        power = true,
+        power = false,
         powerColor = Color3.fromRGB(220, 223, 38),
-        oath = true,
+        oath = false,
         oathColor = Color3.fromRGB(255, 255, 255),
         guild = false,
         guildColor = Color3.fromRGB(255, 255, 255),
-        chams = true,
+        chams = false,
         chamsColor = Color3.fromRGB(255, 0, 0),
         chamsOutlineColor = Color3.fromRGB(255, 0, 0),
         uselimitDistance = false,
@@ -312,6 +312,8 @@ function CODE_X:AddPlayer(player)
                 drawing:Remove();
                 drawing = nil;
             end;
+
+            print('Sucessfully Destroy Object: ', self.name);
         end)
 
         if (not Successfully) then 
@@ -326,5 +328,14 @@ function CODE_X:AddPlayer(player)
     self._ancestrychanged = self.player.AncestryChanged:Connect(self._destroy);
 end;
 
+for _,player in next, Players:GetPlayers() do 
+    if (player ~= LocalPlayer) then 
+        CODE_X:AddPlayer(player);
+    end;
+end;
+
+getgenv().ESPUpdate = Players.PlayerAdded:Connect(function(player)
+    CODE_X:AddPlayer(player);
+end);
 
 return CODE_X;

@@ -246,7 +246,7 @@ function CODE_X:AddPlayer(player)
                     self._drawing.line.To = Vector2.new(root_pos.X, root_pos.Y + height*2);
                     self._drawing.blackline.To = Vector2.new(root_pos.X, root_pos.Y + height*2);
                     self._drawing.line.Color = Settigs.tracerColor;
-                    
+                    self._drawing.blackline.Color = Settigs.tracerColor;
 
                     -- // Power
                     self._drawing.power_label.Text = 'Power: '..tostring(player.Character:GetAttribute('Level'));                  
@@ -342,3 +342,10 @@ getgenv().ESPUpdate = Players.PlayerAdded:Connect(function(player)
 end);
 
 return CODE_X;
+
+
+
+
+
+
+

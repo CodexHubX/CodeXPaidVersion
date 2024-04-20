@@ -133,7 +133,9 @@ function CODE_X:AddPlayer(player)
                 self._drawing._greenhealth.Visible = Settigs.healthbar;
             
                 self._drawing.helath_label.Visible = Settigs.healthtext;
-                self._drawing.name_label.Visible = Settigs.nametag;
+                warn(Settigs.nametag)
+
+               -- self._drawing.name_label.Visible = Settigs.nametag;
                 self._drawing.distance_label.Visible = Settigs.distance;
                 self._drawing.line.Visible = Settigs.tracer;
                 self._drawing.blackline.Visible = Settigs.tracer;
@@ -342,3 +344,10 @@ getgenv().ESPUpdate = Players.PlayerAdded:Connect(function(player)
 end);
 
 return CODE_X;
+
+
+
+
+
+
+

@@ -109,9 +109,11 @@ function CODE_X:AddPlayer(player)
 
     self.highlight = Instance.new("Highlight");
 
-        for _,v in next, player.Backpack:GetChildren() do
-            if (v:IsA('Folder') and v.Name:find('Talent:Oath')) then
-                self.oath = v.Name:split(':Oath: ')[2]
+        if (player:FindFirstChild('Backpack')) then 
+            for _,v in next, player:FindFirstChild('Backpack'):GetChildren() do
+                if (v:IsA('Folder') and v.Name:find('Talent:Oath')) then
+                    self.oath = v.Name:split(':Oath: ')[2]
+                end;
             end;
         end;
 
@@ -154,6 +156,8 @@ function CODE_X:AddPlayer(player)
                 if (not player or not player.Character or not Settigs.enabled) then 
                     return self._visible(false); 
                 end;
+
+                print('Disable')
 
                 local humanoid = player.Character:FindFirstChildOfClass('Humanoid');
                 if (not humanoid) then 

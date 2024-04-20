@@ -157,8 +157,6 @@ function CODE_X:AddPlayer(player)
                     return self._visible(false); 
                 end;
 
-                print('Disable')
-
                 local humanoid = player.Character:FindFirstChildOfClass('Humanoid');
                 if (not humanoid) then 
                     return self._visible(false);
@@ -303,6 +301,11 @@ function CODE_X:AddPlayer(player)
             end;
         end;
     
+
+    self.Rander = RunService.Heartbeat:Connect(function(Time)
+        self._updater(Time);
+    end);
+
     self._destroy = function()
         local Successfully, Error = pcall(function()
             self.Rander:Disconnect()
@@ -324,10 +327,6 @@ function CODE_X:AddPlayer(player)
             warn('Error: _destroy',Error);
         end;
     end;
-
-    self.Rander = RunService.Heartbeat:Connect(function(Time)
-        self._updater(Time);
-    end);
 
     self._ancestrychanged = self.player.AncestryChanged:Connect(self._destroy);
 end;

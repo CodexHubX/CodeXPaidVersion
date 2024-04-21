@@ -353,7 +353,7 @@ function CODE_X:AddEntity(character,name)
 
     self._updater = function()
         local Successfully, Error = pcall(function()
-            
+
             if (not self._instance:FindFirstChild('HumanoidRootPart')) then 
                 if (self._connection) then 
                     self._connection:Disconnect();
@@ -433,6 +433,11 @@ function CODE_X:AddEntity(character,name)
             self._child_added = nil;
         end;
 
+        if (self._ancestrychanged) then 
+            self._ancestrychanged:Disconnect();
+            self._ancestrychanged = nil;
+        end;
+
         self._drawing:Remove();
     end;
 
@@ -509,6 +514,11 @@ function CODE_X:AddInstance(instance,name)
             self._connection = nil;
         end;
 
+        if (self._ancestrychanged) then 
+            self._ancestrychanged:Disconnect();
+            self._ancestrychanged = nil;
+        end;
+
         self._drawing:Remove();
         self._enabled = function() return end;
     end;
@@ -532,6 +542,3 @@ function CODE_X:Load()
 end;
 
 return CODE_X;
-
-
-

@@ -35,8 +35,16 @@ local CODE_X = {
         chamsColor = Color3.fromRGB(255, 0, 0),
         chamsOutlineColor = Color3.fromRGB(255, 0, 0),
         uselimitDistance = false,
-        limitDistance = 20000,
+        limitDistance = 15000,
+        entity_enabled = false,
+        entity_ShowHealth = false,
+        entity_ShowDistance = false,
+        entity_Chams = false,
+        entity_TextColor  = Color3.fromRGB(255, 255, 255),
+        entity_ChamsColor = Color3.fromRGB(175,25, 235),
+        entity_limitDistance = 15000,
     },
+    
 
     _asset = {_module = { 
     __newquad = function(color ,thickness)
@@ -331,21 +339,202 @@ function CODE_X:AddPlayer(player)
     self._ancestrychanged = self.player.AncestryChanged:Connect(self._destroy);
 end;
 
-for _,player in next, Players:GetPlayers() do 
-    if (player ~= LocalPlayer) then 
-        CODE_X:AddPlayer(player);
+
+function CODE_X:AddEntity(character,name)
+    local self = setmetatable({},self._asset);
+    local _module = getrawmetatable(self)._module;
+
+    self._class = 'Entity';
+    self._instance = character;
+    self._connection = nil;
+    self._name = name or character.Name;
+    self._drawing  = _module.__newtext('',Color3.fromRGB(255, 255, 255),14);
+    self.highlight = Instance.new("Highlight");
+
+    self._updater = function()
+        local Successfully, Error = pcall(function()
+            if (not self._instance:FindFirstChild('HumanoidRootPart')) then 
+                if (self._connection) then 
+                    self._connection:Disconnect();
+                    self._connection = nil;
+                end;
+                return;
+            end;
+            
+            local instance_pos,onscreen = CurrentCamera:WorldToViewportPoint(self._instance.HumanoidRootPart.Position);
+            if (onscreen) then 
+
+                local distance = LocalPlayer:DistanceFromCharacter(self._instance.HumanoidRootPart.Position);
+
+                if (distance > Settigs.entity_limitDistance or not Settigs.entity_enabled) then 
+                    self._drawing.Visible = false;
+                    self.highlight.Enabled = false;
+                    return;
+                end;
+
+                local humanoid = self._instance:FindFirstChildOfClass('Humanoid');
+                if (not humanoid) then return end;
+
+                if (self.Chams) then 
+                    self.highlight.Enabled = Settigs.entity_Chams;
+                    self.highlight.Parent = self._instance;
+                    self.highlight.FillColor = Settigs.entity_ChamsColor;    
+                    self.highlight.OutlineColor = Settigs.entity_ChamsColor;    
+                end;
+
+                self._drawing.Visible = true;
+                self._drawing.Color = Settigs.entity_TextColor;
+                self._drawing.Position = Vector2.new(instance_pos.X,instance_pos.Y);
+
+                if (Settigs.entity_ShowHealth and Settigs.entity_ShowDistance) then 
+                    self._drawing.Text = string.format("%s\n%s away\nHealth: %s/%s", self._name, math.floor(distance), math.floor(humanoid.Health), math.floor(humanoid.MaxHealth))
+                elseif (Settigs.entity_ShowHealth) then 
+                    self._drawing.Text = string.format("%s\n%s away", self._name, math.floor(distance))
+                elseif (Settigs.entity_ShowDistance)  then 
+                    self._drawing.Text = string.format("%s\nHealth: %s/%s", self._name, math.floor(humanoid.Health), math.floor(humanoid.MaxHealth))
+                else 
+                    self._drawing.Text = self._name;
+                end;
+            else 
+                self._drawing.Visible =  false;
+                self.highlight.Enabled = false;
+            end;
+        end)
+        if (not Successfully) then 
+            warn('Error: Entity _updater', Error);
+        end;
+    end;        
+
+    self._Rander = function(Stage)
+        if (not Stage) then 
+            if (self._connection) then 
+                self._connection:Disconnect();
+                self._connection = nil;
+            end;
+            return;
+        end;
+
+        if (self._connection) then return end;
+
+        self._connection = RunService.Heartbeat:Connect(function(Time)
+            self._updater(Time);
+        end);
     end;
+
+    if (character:FindFirstChild('HumanoidRootPart')) then 
+        self._Rander(true);
+    end;
+
+    self._child_added = character.ChildAdded:Connect(function(child)
+        if (child.Name == 'HumanoidRootPart') then 
+            self._Rander(true);
+        end;
+    end);
+
+    self._destroy = function()
+        if (self._connection) then 
+            self._connection:Disconnect();
+            self._connection = nil;
+        end;
+
+        if (self._child_added) then 
+            self._child_added:Disconnect();
+            self._child_added = nil;
+        end;
+
+        self._drawing:Remove();
+        self._enabled = function() return end;
+    end;
+
+    self._ancestrychanged = self._instance.AncestryChanged:Connect(self._destroy);
+end;    
+
+function CODE_X:AddInstance(instance,name)
+    local self = setmetatable({},self._asset);
+    local _module = getrawmetatable(self)._module;
+
+    self._class = 'Instance';
+    self.ShowDistance = false;
+    self.TextColor = Color3.fromRGB(255, 255, 255);
+
+    self._instance = instance;
+    self._connection = nil;
+    self._name = name or instance.Name;
+    self._limitDistance = 15000;
+    self._drawing  = _module.__newtext('',Color3.fromRGB(255, 255, 255),14);
+
+    self._updater = function()
+        local Successfully, Error = pcall(function()
+            local instance_pos,onscreen = CurrentCamera:WorldToViewportPoint(self._instance.Position);
+            if (onscreen) then 
+                local distance = LocalPlayer:DistanceFromCharacter(self._instance.Position);
+                if (distance > self._limitDistance) then 
+                    self._drawing.Visible = false;
+                    return;
+                end;
+
+                self._drawing.Visible = true;
+                self._drawing.Color = self.TextColor;
+
+                if (self.ShowDistance) then 
+                    self._drawing.Text = '['..self._name..']'..'['..tostring(distance):split('.')[1]..' away]';
+                else 
+                    self._drawing.Text = '['..self._name..']';
+                end;
+                self._drawing.Position = Vector2.new(instance_pos.X,instance_pos.Y);
+            else 
+                self._drawing.Visible = false;
+            end;
+        end)
+
+        if (not Successfully) then 
+            warn('Error: _updater', Error);
+        end;
+    end;
+
+    self._enabled = function(Stage)
+        if (not Stage) then 
+            if (self._connection) then 
+                self._connection:Disconnect();
+                self._connection = nil;  
+            end;
+            self._drawing.Visible = false;
+            return;
+        end;
+
+        if (self._connection) then return end;
+        
+        self._connection = RunService.Heartbeat:Connect(function(Time)
+            self._updater(Time);
+        end);
+    end;    
+
+    self._destroy = function()
+        if (self._connection) then 
+            self._connection:Disconnect();
+            self._connection = nil;
+        end;
+
+        self._drawing:Remove();
+        self._enabled = function() return end;
+    end;
+
+    self._ancestrychanged = self._instance.AncestryChanged:Connect(self._destroy);
+    return self;
 end;
 
-getgenv().ESPUpdate = Players.PlayerAdded:Connect(function(player)
-    CODE_X:AddPlayer(player);
-end);
+
+
+function CODE_X:Load()
+    for _,player in next, Players:GetPlayers() do 
+        if (player ~= LocalPlayer) then 
+            CODE_X:AddPlayer(player);
+        end;
+    end;
+
+    getgenv().ESPUpdate = Players.PlayerAdded:Connect(function(player)
+        CODE_X:AddPlayer(player);
+    end);
+end;
 
 return CODE_X;
-
-
-
-
-
-
-

@@ -353,6 +353,7 @@ function CODE_X:AddEntity(character,name)
 
     self._updater = function()
         local Successfully, Error = pcall(function()
+            
             if (not self._instance:FindFirstChild('HumanoidRootPart')) then 
                 if (self._connection) then 
                     self._connection:Disconnect();
@@ -406,28 +407,18 @@ function CODE_X:AddEntity(character,name)
     end;        
 
     self._Rander = function(Stage)
-        if (not Stage) then 
-            if (self._connection) then 
-                self._connection:Disconnect();
-                self._connection = nil;
-            end;
-            return;
-        end;
-
-        if (self._connection) then return end;
-
         self._connection = RunService.Heartbeat:Connect(function(Time)
             self._updater(Time);
         end);
     end;
 
     if (character:FindFirstChild('HumanoidRootPart')) then 
-        self._Rander(true);
+        self._Rander();
     end;
 
     self._child_added = character.ChildAdded:Connect(function(child)
         if (child.Name == 'HumanoidRootPart') then 
-            self._Rander(true);
+            self._Rander();
         end;
     end);
 
@@ -443,10 +434,13 @@ function CODE_X:AddEntity(character,name)
         end;
 
         self._drawing:Remove();
-        self._enabled = function() return end;
     end;
 
-    self._ancestrychanged = self._instance.AncestryChanged:Connect(self._destroy);
+    self._ancestrychanged = self._instance.AncestryChanged:Connect(function(_,parent)
+        if (not parent) then 
+            self._destroy()
+        end;
+    end);
 end;    
 
 function CODE_X:AddInstance(instance,name)
@@ -538,3 +532,6 @@ function CODE_X:Load()
 end;
 
 return CODE_X;
+
+
+

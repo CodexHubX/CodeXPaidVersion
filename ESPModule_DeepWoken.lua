@@ -375,7 +375,7 @@ function CODE_X:AddEntity(character,name)
                 local humanoid = self._instance:FindFirstChildOfClass('Humanoid');
                 if (not humanoid) then return end;
 
-                if (self.Chams) then 
+                if (Settigs.entity_Chams) then 
                     self.highlight.Enabled = Settigs.entity_Chams;
                     self.highlight.Parent = self._instance;
                     self.highlight.FillColor = Settigs.entity_ChamsColor;    

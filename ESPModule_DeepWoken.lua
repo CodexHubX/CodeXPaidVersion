@@ -546,7 +546,7 @@ function CODE_X:Load()
         end;
     end;
 
-    getgenv().ESPUpdate = Players.PlayerAdded:Connect(function(player)
+    getgenv().ESPUpdate = Players.ChildAdded:Connect(function(player)
         CODE_X:AddPlayer(player);
     end);
 end;

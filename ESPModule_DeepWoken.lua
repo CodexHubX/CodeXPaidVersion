@@ -358,6 +358,8 @@ function CODE_X:AddEntity(character,name)
                 if (self._connection) then 
                     self._connection:Disconnect();
                     self._connection = nil;
+                    self._drawing.Visible = false;
+                    self.highlight.Enabled = false;
                 end;
                 return;
             end;
@@ -501,8 +503,12 @@ function CODE_X:AddInstance(instance,name)
             return;
         end;
 
+        warn('XXXXXXXXXXXXXXXXXXXXX')
+
         if (self._connection) then return end;
-        
+
+        warn('Call UPDATE TER')
+
         self._connection = RunService.Heartbeat:Connect(function(Time)
             self._updater(Time);
         end);
@@ -542,3 +548,6 @@ function CODE_X:Load()
 end;
 
 return CODE_X;
+
+
+

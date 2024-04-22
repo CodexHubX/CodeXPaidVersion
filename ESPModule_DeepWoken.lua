@@ -503,11 +503,7 @@ function CODE_X:AddInstance(instance,name)
             return;
         end;
 
-        warn('XXXXXXXXXXXXXXXXXXXXX')
-
         if (self._connection) then return end;
-
-        warn('Call UPDATE TER')
 
         self._connection = RunService.Heartbeat:Connect(function(Time)
             self._updater(Time);
@@ -515,27 +511,35 @@ function CODE_X:AddInstance(instance,name)
     end;    
 
     self._destroy = function()
-        if (self._connection) then 
+        
+        pcall(function()
             self._connection:Disconnect();
             self._connection = nil;
-        end;
+        end);
 
-        if (self._ancestrychanged) then 
+        pcall(function()
             self._ancestrychanged:Disconnect();
             self._ancestrychanged = nil;
-        end;
+        end);
 
         self._drawing:Remove();
-        self._enabled = function() return end;
+        self._enabled = function() 
+            return 
+        end;
     end;
 
-    self._ancestrychanged = self._instance.AncestryChanged:Connect(self._destroy);
+    self._ancestrychanged = self._instance.AncestryChanged:Connect(function(_,parent)
+        if (not parent) then 
+            self._destroy()
+        end;
+    end);
     return self;
 end;
 
 
 
 function CODE_X:Load()
+
     for _,player in next, Players:GetPlayers() do 
         if (player ~= LocalPlayer) then 
             CODE_X:AddPlayer(player);
@@ -548,6 +552,5 @@ function CODE_X:Load()
 end;
 
 return CODE_X;
-
 
 

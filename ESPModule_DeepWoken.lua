@@ -43,6 +43,7 @@ local CODE_X = {
         entity_TextColor  = Color3.fromRGB(255, 255, 255),
         entity_ChamsColor = Color3.fromRGB(175,25, 235),
         entity_limitDistance = 15000,
+        unopened_Chests = false,
     },
     
 
@@ -450,7 +451,7 @@ function CODE_X:AddEntity(character,name)
     end);
 end;    
 
-function CODE_X:AddInstance(instance,name)
+function CODE_X:AddInstance(instance,name,mode,chest)
     local self = setmetatable({},self._asset);
     local _module = getrawmetatable(self)._module;
 
@@ -466,9 +467,23 @@ function CODE_X:AddInstance(instance,name)
 
     self._updater = function()
         local Successfully, Error = pcall(function()
-            local instance_pos,onscreen = CurrentCamera:WorldToViewportPoint(self._instance.Position);
+
+            if (chest and Settigs.unopened_Chests and self._instance.Rotation.Y < 50) then 
+                self._drawing.Visible = false;
+                return;
+            end;
+
+            local position;
+            if (mode and self._instance:IsA('Model')) then 
+                position = self._instance:GetModelCFrame().Position;
+            else 
+                position = self._instance.Position;
+            end;
+
+            local instance_pos,onscreen = CurrentCamera:WorldToViewportPoint(position);
+            
             if (onscreen) then 
-                local distance = LocalPlayer:DistanceFromCharacter(self._instance.Position);
+                local distance = LocalPlayer:DistanceFromCharacter(position);
                 if (distance > self._limitDistance) then 
                     self._drawing.Visible = false;
                     return;
@@ -548,7 +563,6 @@ function CODE_X:Load()
 
     getgenv().ESPUpdate = Players.ChildAdded:Connect(function(player)
         task.wait(2);
-        warn('newplayer: ', player.Name);
         CODE_X:AddPlayer(player);
     end);
 end;

@@ -1,3 +1,7 @@
+local LocalPlayer = game.Players.LocalPlayer;
+local RunService = game:GetService('RunService');
+local Connection;
+local rate = 0;
 
 local Settigs = {
     _nofall = false,
@@ -16,5 +20,43 @@ _mt = hookmetamethod(game,'__namecall',function(self,...)
     return _mt(self,...)
 end)
 
+function Rander()
+    local Sucessfully,Error = pcall(function()
+        if (not LocalPlayer and not LocalPlayer.Character) then return end;
+        for _,v in next, LocalPlayer.Character:GetChildren() do 
+            if (v:IsA('BasePart')) then 
+                v.CanCollide = false;
+            end;
+        end;
+    end)
+
+    if (not Sucessfully) then 
+        warn('Error:NRander',Error)
+    end;
+end;
+
+
+function Settigs:Noclip(Stage)
+    local Sucessfully,Error = pcall(function()
+        if (not Stage) then 
+            if (Connection) then 
+                Connection:Disconnect();
+                Connection = nil;
+            end;
+            if (not LocalPlayer and not LocalPlayer.Character) then return end;
+            for _,v in next, LocalPlayer.Character:GetChildren() do 
+                if (v:IsA('BasePart')) then 
+                    v.CanCollide = true;
+                end;
+            end;
+            return;
+        end;
+
+        Connection = RunService.Heartbeat:Connect(function(Rate)
+            Rander(Rate);
+        end);
+    end)
+end;
 
 return Settigs;
+

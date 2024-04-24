@@ -22,9 +22,10 @@ end)
 
 function Rander()
     local Sucessfully,Error = pcall(function()
-        if (not LocalPlayer and not LocalPlayer.Character) then return end;
+        if (not LocalPlayer or not LocalPlayer.Character) then return end;
         for _,v in next, LocalPlayer.Character:GetChildren() do 
             if (v:IsA('BasePart')) then 
+                warn(v)
                 v.CanCollide = false;
             end;
         end;
@@ -43,7 +44,7 @@ function Settigs:Noclip(Stage)
                 Connection:Disconnect();
                 Connection = nil;
             end;
-            if (not LocalPlayer and not LocalPlayer.Character) then return end;
+            if (not LocalPlayer and or LocalPlayer.Character) then return end;
             for _,v in next, LocalPlayer.Character:GetChildren() do 
                 if (v:IsA('BasePart')) then 
                     v.CanCollide = true;

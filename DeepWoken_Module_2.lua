@@ -343,6 +343,8 @@ Status.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Status.BorderSizePixel = 0
 Status.Position = UDim2.new(0.875376046, 0, 0.209784418, 0)
 Status.Size = UDim2.new(0, 257, 0, 729)
+Status.Visible = false;
+
 
 UICorner_10.Parent = Status
 

@@ -571,6 +571,12 @@ function Modules:UpdateSkull(value)
     end)
 end;
 
+function Modules:UpdateHeadText(value)
+    pcall(function()
+        TextLabel_4.Text = tostring(value)
+    end)
+end;
+
 
 
 function Modules:Update(class,value)

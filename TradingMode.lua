@@ -1,1 +1,1 @@
-getgenv().TradingMode = true;
+getgenv().TradingMode = false;

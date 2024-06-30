@@ -2,7 +2,7 @@
         ['Enabled'] = true,
         ['Enabled Challenge'] = false,
         ['Summon The Beast'] = true,
-        ['PC Name'] = 'V4 [3]',
+        ['PC Name'] = 'V4 [4]',
         ['Delay'] = 0,
         ['Leave Delay'] = 0,
         ['EquipBest'] = true,

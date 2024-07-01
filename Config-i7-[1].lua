@@ -1,7 +1,7 @@
 getgenv().Configuration = {
         ['Enabled'] = true,
         ['Enabled Challenge'] = false,
-        ['Summon The Beast'] = true,
+        ['Summon The Beast'] = false,
         ['PC Name'] = 'I7 [1]',
         ['Delay'] = 0,
         ['Leave Delay'] = 0,

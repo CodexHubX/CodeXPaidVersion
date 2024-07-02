@@ -11,10 +11,3 @@ getgenv().Configuration = {
         ['TradingMode'] = true,
         ['License'] = 'JameFarmOnTop',
   };
-spawn(function()
-    while true do task.wait(1) 
-        pcall(function()
-            game:GetService('RunService'):Set3dRenderingEnabled(true)
-        end)
-    end;
-end)

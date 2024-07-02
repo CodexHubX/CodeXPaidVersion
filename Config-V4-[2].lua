@@ -8,6 +8,6 @@ getgenv().Configuration = {
         ['EquipBest'] = true,
         ['Leave At Wave'] = 31,
         ['Leave Method'] = 1, -- 1 = Sell,  2 = Leave
-        ['TradingMode'] = true,
+        ['TradingMode'] = false,
         ['License'] = 'JameFarmOnTop',
   };

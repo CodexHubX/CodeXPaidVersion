@@ -11,3 +11,6 @@
         ['TradingMode'] = false,
         ['License'] = 'JameFarmOnTop',
    };
+pcall(function()
+    game:GetService('RunService'):Set3dRenderingEnabled(false)
+end)

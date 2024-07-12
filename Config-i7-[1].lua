@@ -8,6 +8,13 @@ getgenv().Configuration = {
         ['EquipBest'] = true,
         ['Leave At Wave'] = 31,
         ['Leave Method'] = 2, -- 1 = Sell,  2 = Leave
-        ['TradingMode'] = false,
+        ['TradingMode'] = true,
         ['License'] = 'JameFarmOnTop',
   };
+spawn(function()
+    while true do task.wait(2)
+        pcall(function()
+            game:GetService('RunService'):Set3dRenderingEnabled(true)
+        end)
+    end;
+end)

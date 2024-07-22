@@ -1,3 +1,15 @@
+
+local AutoRejoinThread = task.spawn(function()
+    repeat 
+        task.wait() 
+    until game:IsLoaded();
+    task.wait(30);
+    if not game.Players.LocalPlayer.PlayerGui:FindFirstChild('Anime Defenders') then 
+        game:GetService('TeleportService'):Teleport(17017769292);
+    end;
+end);
+
+
 getgenv().Configuration = {
         ['Enabled'] = true,
         ['Enabled Challenge'] = false,

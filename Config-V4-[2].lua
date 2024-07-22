@@ -1,3 +1,4 @@
+game:GetService('RunService'):Set3dRenderingEnabled(false)
 
 local AutoRejoinThread = task.spawn(function()
     repeat 

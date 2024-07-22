@@ -1,3 +1,4 @@
+game:GetService('RunService'):Set3dRenderingEnabled(false)
 getgenv().Configuration = {
         ['Enabled'] = true,
         ['Enabled Challenge'] = false,

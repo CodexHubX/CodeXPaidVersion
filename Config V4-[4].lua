@@ -1,4 +1,5 @@
-    getgenv().Configuration = {
+game:GetService('RunService'):Set3dRenderingEnabled(false)
+getgenv().Configuration = {
         ['Enabled'] = true,
         ['Enabled Challenge'] = false,
         ['Summon The Beast'] = false,
@@ -11,3 +12,4 @@
         ['TradingMode'] = false,
         ['License'] = 'JameFarmOnTop',
    };
+

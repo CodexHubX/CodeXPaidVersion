@@ -1,14 +1,14 @@
 game:GetService('RunService'):Set3dRenderingEnabled(false)
 
-local AutoRejoinThread = task.spawn(function()
-    repeat 
-        task.wait() 
-    until game:IsLoaded();
-    task.wait(30);
-    if not game.Players.LocalPlayer.PlayerGui:FindFirstChild('Anime Defenders') then 
-        game:GetService('TeleportService'):Teleport(17017769292);
-    end;
-end);
+--local AutoRejoinThread = task.spawn(function()
+--    repeat 
+--        task.wait() 
+--    until game:IsLoaded();
+--    task.wait(30);
+--    if not game.Players.LocalPlayer.PlayerGui:FindFirstChild('Anime Defenders') then 
+--        game:GetService('TeleportService'):Teleport(17017769292);
+--    end;
+--end);
 
 getgenv().Configuration = {
         ['Enabled'] = true,
@@ -23,3 +23,4 @@ getgenv().Configuration = {
         ['TradingMode'] = false,
         ['License'] = 'JameFarmOnTop',
    };
+spawn(function() while task.wait(1) do pcall(function() game:GetService('RunService'):Set3dRenderingEnabled(true) end) end end)

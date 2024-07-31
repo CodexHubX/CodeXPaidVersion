@@ -1,3 +1,4 @@
+warn('dweqe')
 loadstring(game:HttpGet("https://raw.githubusercontent.com/CodexHubX/CodeXPaidVersion/main/Config%20V4%20%5B1%5D.lua"))()
 
 -- if not LPH_OBFUSCATED  then 

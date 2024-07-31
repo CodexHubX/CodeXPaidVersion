@@ -20,6 +20,6 @@ getgenv().Configuration = {
         ['Leave At Wave'] = 31,
         ['Leave Method'] = 2, -- 1 = Sell,  2 = Leave
         ['TradingMode'] = false,
-        ['Join Trading'] = '',
+        ['Main User'] = '',
         ['License'] = 'JameFarmOnTop',
   };

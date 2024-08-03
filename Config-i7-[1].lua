@@ -14,6 +14,7 @@ getgenv().Configuration = {
         ['Enabled'] = true,
         ['Enabled Challenge'] = false,
         ['Summon The Beast'] = false,
+        ['Reroll Farm Pro Max'] = true,
         ['PC Name'] = 'I7 [1]',
         ['Delay'] = 0,
         ['Leave Delay'] = 0,

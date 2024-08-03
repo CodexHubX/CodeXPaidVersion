@@ -18,7 +18,7 @@ getgenv().Configuration = {
         ['Delay'] = 0,
         ['Leave Delay'] = 0,
         ['EquipBest'] = true,
-        ['Reroll Farm Pro Max'] = true,
+        ['Reroll Farm Pro Max'] = false,
         ['Leave At Wave'] = 31,
         ['Leave Method'] = 2, -- 1 = Sell,  2 = Leave
         ['TradingMode'] = false,

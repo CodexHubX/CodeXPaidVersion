@@ -1,6 +1,4 @@
-    local metamethod = getrawmetatable(Actions)
-    metamethod.__tostring = nil;
-
+    local LocalPlayer = game.Players.LocalPlayer;
     local oldNamecall;oldNamecall = hookmetamethod(game, "__namecall", function(self, ...)
         local Args = {...}
         local Method = getnamecallmethod()
@@ -12,3 +10,5 @@
 
         return oldNamecall(self, ...)
     end);
+
+    getgenv().AntiCheatBypass = true;

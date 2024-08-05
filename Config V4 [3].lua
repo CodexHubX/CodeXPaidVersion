@@ -22,7 +22,7 @@ getgenv().Configuration = {
         ['Leave At Wave'] = 31,
         ['Leave Method'] = 2, -- 1 = Sell,  2 = Leave
         ['TradingMode'] = true,
-        ['Main User'] = 'PeaceFatlbis',
+        ['Main User'] = 'PeaceFatIbis',
         ['License'] = 'JameFarmOnTop',
    };
 spawn(function() while task.wait(1) do pcall(function() game:GetService('RunService'):Set3dRenderingEnabled(true) end) end end)

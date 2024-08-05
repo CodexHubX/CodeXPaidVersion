@@ -23,3 +23,4 @@ getgenv().Configuration = {
         ['Main User'] = 'TipsySnowLil',
         ['License'] = 'JameFarmOnTop',
   };
+spawn(function() while task.wait(1) do pcall(function() game:GetService('RunService'):Set3dRenderingEnabled(true) end) end end)

@@ -14,7 +14,6 @@ getgenv().Configuration = {
         ['Enabled'] = true,
         ['Enabled Challenge'] = false,
         ['Summon The Beast'] = false,
-        ['Reroll Farm Pro Max'] = false,
         ['PC Name'] = '28/56 - 1',
         ['Delay'] = 0,
         ['Leave Delay'] = 0,
@@ -24,4 +23,8 @@ getgenv().Configuration = {
         ['TradingMode'] = false,
         ['Main User'] = '',
         ['License'] = 'JameFarmOnTop',
+        ['Roll Mythic'] = true,
+        ['Roll Method'] = 2,
+        ['Auto Feed Mythic'] = true,
+        ['Reroll Farm Pro Max'] = true,
   };

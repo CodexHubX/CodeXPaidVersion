@@ -22,4 +22,7 @@ getgenv().Configuration = {
         ['TradingMode'] = false,
         ['Main User'] = '',
         ['License'] = 'JameFarmOnTop',
+        ['Roll Mythic'] = true,
+        ['Roll Method'] = 2,
+        ['Auto Feed Mythic'] = true,
   };

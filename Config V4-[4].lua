@@ -27,4 +27,5 @@ getgenv().Configuration = {
         ['Roll Mythic'] = true,
         ['Roll Method'] = 2,
         ['Auto Feed Mythic'] = true,
+        ['Reroll Farm Pro Max'] = true,
    };

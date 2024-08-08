@@ -25,4 +25,7 @@ getgenv().Configuration = {
         ['Main User'] = '',
         ['Reroll Farm Pro Max'] = false,
         ['License'] = 'JameFarmOnTop',
+        ['Roll Mythic'] = true,
+        ['Roll Method'] = 2,
+        ['Auto Feed Mythic'] = true,
   };

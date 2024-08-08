@@ -21,7 +21,7 @@ getgenv().Configuration = {
         ['Leave Method'] = 2, -- 1 = Sell,  2 = Leave
         ['TradingMode'] = false,
         ['Main User'] = '',
-        ['Reroll Farm Pro Max'] = false,
+        ['Reroll Farm Pro Max'] = true,
         ['License'] = 'JameFarmOnTop',
         ['Roll Mythic'] = true,
         ['Roll Method'] = 2,

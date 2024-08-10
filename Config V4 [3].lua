@@ -1,14 +1,14 @@
 game:GetService('RunService'):Set3dRenderingEnabled(false)
 
---local AutoRejoinThread = task.spawn(function()
---    repeat 
---        task.wait() 
---    until game:IsLoaded();
---    task.wait(120);
---    if not game.Players.LocalPlayer.PlayerGui:FindFirstChild('Anime Defenders') then 
---        game:GetService('TeleportService'):Teleport(17017769292);
---    end;
---end);
+local AutoRejoinThread = task.spawn(function()
+    repeat 
+        task.wait() 
+    until game:IsLoaded();
+    task.wait(120);
+    if not game.Players.LocalPlayer.PlayerGui:FindFirstChild('Anime Defenders') then 
+        game:GetService('TeleportService'):Teleport(17017769292);
+    end;
+end);
 
 getgenv().Configuration = {
         ['Enabled'] = true,
@@ -20,13 +20,11 @@ getgenv().Configuration = {
         ['EquipBest'] = true,
         ['Leave At Wave'] = 31,
         ['Leave Method'] = 2, -- 1 = Sell,  2 = Leave
-        ['TradingMode'] = true,
-        ['Main User'] = 'PeaceFatIbis',
+        ['TradingMode'] = false,
+        ['Main User'] = '',
         ['License'] = 'JameFarmOnTop',
         ['Roll Mythic'] = true,
         ['Roll Method'] = 2,
         ['Auto Feed Mythic'] = true,
         ['Reroll Farm Pro Max'] = true,
    };
-
-spawn(function() while task.wait(1) do pcall(function() game:GetService('RunService'):Set3dRenderingEnabled(true) end) end end)

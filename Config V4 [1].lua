@@ -29,12 +29,12 @@ getgenv().Configuration = {
          ['Roll Ticket'] = true,
          ['Use Auto Sell'] = true,
          ['Sell Config'] = {
-             ['Rare'] = false,
-             ['Epic'] = false,
-             ['Legendary'] = false,
-             ['Rare Shiny'] = false,
-             ['Epic Shiny'] = false,
-             ['Legendary Shiny'] = false,
+             ['Rare'] = true,
+             ['Epic'] = true,
+             ['Legendary'] = true,
+             ['Rare Shiny'] = true,
+             ['Epic Shiny'] = true,
+             ['Legendary Shiny'] = true,
          },
          ['Placement Distance'] = 15,
   };

@@ -28,4 +28,15 @@ getgenv().Configuration = {
         ['Roll Mythic'] = true,
         ['Roll Method'] = 2,
         ['Auto Feed Mythic'] = true,
+         ['Roll Ticket'] = true,
+         ['Use Auto Sell'] = true,
+         ['Sell Config'] = {
+             ['Rare'] = true,
+             ['Epic'] = true,
+             ['Legendary'] = true,
+             ['Rare Shiny'] = true,
+             ['Epic Shiny'] = true,
+             ['Legendary Shiny'] = true,
+         },
+         ['Placement Distance'] = 15,
   };

@@ -1,3 +1,3 @@
-_G.UseBugFixed = true
-_G.MainUserName = 'BossXxTheMan'
-_G.JobID = '101a2c07-b01d-4176-a7b5-e19d7a95ac70'
+_G.UseBugFixed = false
+_G.MainUserName = ''
+_G.JobID = ''

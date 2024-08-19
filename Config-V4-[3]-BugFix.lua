@@ -1,3 +1,3 @@
-_G.UseBugFixed = true
-_G.MainUserName = 'HareFroglet'
-_G.JobID = 'e751ac53-7039-46ab-8276-b28a93348b12'
+_G.UseBugFixed = false
+_G.MainUserName = ''
+_G.JobID = ''

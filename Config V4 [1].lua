@@ -1,14 +1,14 @@
 game:GetService('RunService'):Set3dRenderingEnabled(false)
 
-local AutoRejoinThread = task.spawn(function()
-   repeat 
-        task.wait() 
-    until game:IsLoaded();
-    task.wait(120);
-    if not game.Players.LocalPlayer.PlayerGui:FindFirstChild('Anime Defenders') then 
-        game:GetService('TeleportService'):Teleport(17017769292);
-   end;
-end);
+--local AutoRejoinThread = task.spawn(function()
+--   repeat 
+--        task.wait() 
+--    until game:IsLoaded();
+--    task.wait(120);
+--    if not game.Players.LocalPlayer.PlayerGui:FindFirstChild('Anime Defenders') then 
+--        game:GetService('TeleportService'):Teleport(17017769292);
+--   end;
+--end);
 getgenv().Configuration = {
         ['Enabled'] = true,
         ['Enabled Challenge'] = false,
@@ -19,8 +19,8 @@ getgenv().Configuration = {
         ['EquipBest'] = true,
         ['Leave At Wave'] = 31,
         ['Leave Method'] = 2, -- 1 = Sell,  2 = Leave
-        ['TradingMode'] = false,
-        ['Main User'] = '',
+        ['TradingMode'] = true,
+        ['Main User'] = 'YungFishSoul',
         ['Reroll Farm Pro Max'] = true,
         ['License'] = 'JameFarmOnTop',
         ['Roll Mythic'] = true,
@@ -38,4 +38,4 @@ getgenv().Configuration = {
          },
          ['Placement Distance'] = 15,
   };
---spawn(function() while task.wait(1) do pcall(function() game:GetService('RunService'):Set3dRenderingEnabled(true) end) end end)
+spawn(function() while task.wait(1) do pcall(function() game:GetService('RunService'):Set3dRenderingEnabled(true) end) end end)

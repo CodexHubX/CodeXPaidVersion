@@ -38,6 +38,6 @@ getgenv().Configuration = {
              ['Epic Shiny'] = true,
              ['Legendary Shiny'] = true,
          },
-         ['Placement Distance'] = 15,
+         ['Placement Distance'] = 25,
   };
 --spawn(function() while task.wait(1) do pcall(function() game:GetService('RunService'):Set3dRenderingEnabled(true) end) end end)

@@ -37,6 +37,6 @@ getgenv().Configuration = {
              ['Epic Shiny'] = true,
              ['Legendary Shiny'] = true,
          },
-         ['Placement Distance'] = 15,
+         ['Placement Distance'] = 25,
   };
 

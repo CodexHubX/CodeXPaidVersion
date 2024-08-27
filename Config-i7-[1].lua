@@ -19,14 +19,14 @@ getgenv().Configuration = {
         ['Leave Delay'] = 0,
         ['EquipBest'] = true,
         ['Leave At Wave'] = 31,
-        ['Leave Method'] = 1, -- 1 = Sell,  2 = Leave
+        ['Leave Method'] = 2, -- 1 = Sell,  2 = Leave
         ['TradingMode'] = false,
         ['Main User'] = '',
         ['License'] = 'JameFarmOnTop',
-        ['Roll Mythic'] = false,
+        ['Roll Mythic'] = true,
         ['Roll Method'] = 2,
-        ['Auto Feed Mythic'] = false,
-        ['Reroll Farm Pro Max'] = false,
+        ['Auto Feed Mythic'] = true,
+        ['Reroll Farm Pro Max'] = true,
          ['Roll Ticket'] = false,
          ['Use Auto Sell'] = false,
          ['Sell Config'] = {

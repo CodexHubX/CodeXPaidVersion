@@ -1,3 +1,3 @@
-_G.UseBugFixed = flase
+_G.UseBugFixed = false
 _G.MainUserName = ''
 _G.JobID = ''

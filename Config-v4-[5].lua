@@ -20,7 +20,7 @@ getgenv().Configuration = {
         ['EquipBest'] = true,
         ['Leave At Wave'] = 31,
         ['Leave Method'] = 2, -- 1 = Sell,  2 = Leave
-        ['TradingMode'] = false,
+        ['TradingMode'] = true,
         ['Main User'] = 'PeaceFatIbis',
         ['License'] = 'JameFarmOnTop',
         ['Roll Mythic'] = true,

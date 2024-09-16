@@ -17,7 +17,7 @@ getgenv().Configuration = {
         ['Delay'] = 0,
         ['Leave Delay'] = 0,
         ['EquipBest'] = true,
-        ['Leave At Wave'] = 31,
+        ['Leave At Wave'] = 46,
         ['Leave Method'] = 2, -- 1 = Sell,  2 = Leave
         ['TradingMode'] = false,
         ['Main User'] = '',

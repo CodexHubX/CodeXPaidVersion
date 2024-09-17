@@ -10,6 +10,7 @@
 
     local Library = {
         ['Settigs'] = {
+            enabled = false,
             box = true, 
             boxColor = Color3.fromRGB(255, 255, 255),
             healthbar = true,
@@ -128,7 +129,8 @@
          end;
 
          local function updater()
-             if not player or not player.Character then 
+
+             if not player or not player.Character or not Settigs.enabled then 
                 return object.Visible(false)
              end;
 
@@ -219,17 +221,9 @@
             for _,drawing in next, object.drawing do  drawing:Remove();drawing = nil;end;
         end;
 
-        function object.Enabled(value)
-            if not value then 
-                if not object.connections.updater then return object.Visible(false); end;
-                object.connections.updater:Disconnect();
-                return object.Visible(false);
-            end;
-
-            object.connections.updater = RunService.Heartbeat:Connect(function(Time)
-                pcall(updater);
-            end);
-        end;
+        object.connections.updater = RunService.Heartbeat:Connect(function(Time)
+            pcall(updater);
+        end);
 
         object.connections.ancestrychange = object.player.AncestryChanged:Connect(function(_,parent)
             if parent then return end; 
@@ -315,5 +309,18 @@
 
         return object;
     end;
-    
-    return Library;
+
+    for _,player in next, Players:GetPlayers() do 
+        if (player ~= LocalPlayer) then 
+            Library.AddPlayer(player);
+        end;
+    end;
+
+    local newPlayer = Players.PlayerAdded:Connect(function(player)
+        Library.AddPlayer(player);
+    end);
+
+return Library;
+
+
+

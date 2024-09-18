@@ -1,14 +1,14 @@
 game:GetService('RunService'):Set3dRenderingEnabled(false)
 
---local AutoRejoinThread = task.spawn(function()
---   repeat 
---        task.wait() 
---    until game:IsLoaded();
---    task.wait(120);
---    if not game.Players.LocalPlayer.PlayerGui:FindFirstChild('Anime Defenders') then 
---        game:GetService('TeleportService'):Teleport(17017769292);
---   end;
---end);
+local AutoRejoinThread = task.spawn(function()
+   repeat 
+        task.wait() 
+    until game:IsLoaded();
+    task.wait(120);
+    if not game.Players.LocalPlayer.PlayerGui:FindFirstChild('Anime Defenders') then 
+        game:GetService('TeleportService'):Teleport(17017769292);
+   end;
+end);
 
 getgenv().Configuration = {
         ['Enabled'] = true,
@@ -21,7 +21,7 @@ getgenv().Configuration = {
         ['Leave At Wave'] = 46,
         ['Leave Method'] = 2, -- 1 = Sell,  2 = Leave
         ['TradingMode'] = true,
-        ['Main User'] = 'SkullXxRugby',
+        ['Main User'] = '',
         ['License'] = 'JameFarmOnTop',
         ['Roll Mythic'] = false,
         ['Roll Method'] = 2,
@@ -40,4 +40,4 @@ getgenv().Configuration = {
          ['Placement Distance'] = 25,
   };
 
-spawn(function() while task.wait(1) do pcall(function() game:GetService('RunService'):Set3dRenderingEnabled(true) end) end end)
+--spawn(function() while task.wait(1) do pcall(function() game:GetService('RunService'):Set3dRenderingEnabled(true) end) end end)

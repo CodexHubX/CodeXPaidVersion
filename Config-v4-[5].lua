@@ -19,7 +19,7 @@ getgenv().Configuration = {
         ['Leave Delay'] = 0,
         ['EquipBest'] = true,
         ['Leave At Wave'] = 46,
-        ['Leave Method'] = 1, -- 1 = Sell,  2 = Leave
+        ['Leave Method'] = 2, -- 1 = Sell,  2 = Leave
         ['TradingMode'] = false,
         ['Main User'] = '',
         ['License'] = 'JameFarmOnTop',

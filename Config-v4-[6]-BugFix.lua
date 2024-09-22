@@ -1,3 +1,3 @@
-_G.UseBugFixed = true
+_G.UseBugFixed = false
 _G.MainUserName = 'PeaceFatIbis'
 _G.JobID = ''

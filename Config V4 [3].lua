@@ -21,7 +21,7 @@ getgenv().Configuration = {
         ['Leave At Wave'] = 46,
         ['Leave Method'] = 2, -- 1 = Sell,  2 = Leave
         ['TradingMode'] = true,
-        ['Main User'] = 'PeaceFatIbis',
+        ['Main User'] = 'YungFishSoul',
         ['License'] = 'JameFarmOnTop',
         ['Roll Mythic'] = false,
         ['Roll Method'] = 2,

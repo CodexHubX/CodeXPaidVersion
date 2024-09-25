@@ -19,8 +19,8 @@ getgenv().Configuration = {
         ['EquipBest'] = true,
         ['Leave At Wave'] = 46,
         ['Leave Method'] = 2, -- 1 = Sell,  2 = Leave
-        ['TradingMode'] = true,
-        ['Main User'] = 'RiderBongo',
+        ['TradingMode'] = false,
+        ['Main User'] = '',
         ['Reroll Farm Pro Max'] = true,
         ['License'] = 'JameFarmOnTop',
         ['Roll Mythic'] = false,

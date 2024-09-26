@@ -2,10 +2,10 @@
     -- Made By Code X Dev ...
     local Service = {};
     local mt_service = setmetatable(Service,{__index = function(self,key)return game:GetService(tostring(key));end;});
-    local LocalPlayer = game.Players.LocalPlayer;
     local PlaceId = game.PlaceId;
     local RunService = Service['RunService'];
     local Players = Service['Players'];
+    local LocalPlayer = Players.LocalPlayer;
     local CurrentCamera = workspace.CurrentCamera;
 
     local Library = {

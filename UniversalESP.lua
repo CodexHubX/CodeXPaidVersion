@@ -6,7 +6,7 @@
     local RunService = Service['RunService'];
     local Players = Service['Players'];
     local LocalPlayer = Players.LocalPlayer;
-    local CurrentCamera = workspace.CurrentCamera;
+   -- local workspace.CurrentCamera = workspace.workspace.CurrentCamera;
 
     local Library = {
         ['Settigs'] = {
@@ -142,7 +142,7 @@
                 return object.Visible(false)
              end;
 
-             local onscreenPosition, onscreen = CurrentCamera:WorldToViewportPoint(rootPart.Position);
+             local onscreenPosition, onscreen = workspace.CurrentCamera:WorldToViewportPoint(rootPart.Position);
              local head = character:FindFirstChild('Head');
 
              if not onscreen or not head then 
@@ -150,7 +150,7 @@
              end;
 
              local distance = LocalPlayer:DistanceFromCharacter(rootPart.Position);
-             local headOnscreen = CurrentCamera:WorldToViewportPoint(head.Position);
+             local headOnscreen = workspace.CurrentCamera:WorldToViewportPoint(head.Position);
 
              if Settigs.uselimitDistance and distance > Settigs.limitDistance then 
                 return object.Visible(false);
@@ -202,8 +202,8 @@
              object.drawing.distance_label.Color = Settigs.distanceColor;
              
              -- // Tracer
-             object.drawing.line.From  = Vector2.new(CurrentCamera.ViewportSize.X*0.5, CurrentCamera.ViewportSize.Y);
-             object.drawing.blackline.From = Vector2.new(CurrentCamera.ViewportSize.X*0.5, CurrentCamera.ViewportSize.Y);
+             object.drawing.line.From  = Vector2.new(workspace.CurrentCamera.ViewportSize.X*0.5, workspace.CurrentCamera.ViewportSize.Y);
+             object.drawing.blackline.From = Vector2.new(workspace.CurrentCamera.ViewportSize.X*0.5, workspace.CurrentCamera.ViewportSize.Y);
 
              object.drawing.line.To = Vector2.new(onscreenPosition.X, onscreenPosition.Y + height*2);
              object.drawing.blackline.To = Vector2.new(onscreenPosition.X, onscreenPosition.Y + height*2);
@@ -262,7 +262,7 @@
                 return;
             end;
 
-            local instance, onscreen = CurrentCamera:WorldToViewportPoint(object.instance.Position);
+            local instance, onscreen = workspace.CurrentCamera:WorldToViewportPoint(object.instance.Position);
             if not onscreen then  object.drawing.label.Visible = false;return end;
             object.drawing.label.Visible = true;
             object.drawing.label.Position = Vector2.new(instance.X,instance.Y);
@@ -321,6 +321,3 @@
     end);
 
 return Library;
-
-
-

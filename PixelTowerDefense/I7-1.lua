@@ -5,4 +5,9 @@ shared.Configs = {
         GithubUrl = 'https://raw.githubusercontent.com/CodexHubX/CodeXPaidVersion/refs/heads/main/ConfigPTD.lua',
         JobID = '',
         TradingMode = false,
+        AutoTrading = {
+            ['Enabled'] = false,
+            ['Main User'] = '',
+            ['JobID'] = '',
+        },
 };

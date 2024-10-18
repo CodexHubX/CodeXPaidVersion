@@ -1,4 +1,4 @@
 return {
   ['Enabled'] = true,
-  ['Roll'] = false,
+  ['Roll'] = true,
 };

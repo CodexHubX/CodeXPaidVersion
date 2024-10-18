@@ -7,8 +7,8 @@ shared.Configs = {
     JobID = '',
     TradingMode = false,
     AutoTrading = {
-        ['Enabled'] = false,
+        ['Enabled'] = true,
         ['Main User'] = 'HugsPrawn070',
-        ['JobID'] = 'f1388e4f-9e7d-4560-b770-d5f4a09e1237',
+        ['JobID'] = '7c85f6c6-776c-4fa1-9429-635f7b516731',
     },
 };

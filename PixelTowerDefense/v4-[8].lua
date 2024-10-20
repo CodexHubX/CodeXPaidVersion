@@ -7,6 +7,7 @@ shared.Configs = {
     JobID = '',
     TradingMode = false,
     FreddyFarm = true,
+    AutoSkipWave = false,
     Difficulty = 'Hard',
     AutoTrading = {
         ['Enabled'] = false,

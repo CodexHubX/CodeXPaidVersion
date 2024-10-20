@@ -7,6 +7,7 @@ shared.Configs = {
     JobID = '',
     TradingMode = false,
     FreddyFarm = true,
+    Difficulty = 'Hard',
     AutoTrading = {
         ['Enabled'] = false,
         ['Main User'] = 'GlowWormNewt',

@@ -8,6 +8,7 @@ shared.Configs = {
     TradingMode = false,
     FreddyFarm = true,
     Difficulty = 'Hard',
+    AutoSkipWave = false,
     AutoTrading = {
         ['Enabled'] = false,
         ['Main User'] = 'LilAuroraAli',

@@ -1,6 +1,6 @@
 return {
   ['Enabled'] = true,
-  ['Roll'] = false,
+  ['Roll'] = true,
   ['Event'] = false,
   ['Sell Legend'] = true,
 };

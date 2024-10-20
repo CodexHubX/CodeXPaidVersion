@@ -6,6 +6,7 @@ shared.Configs = {
     GithubConfigUrl = 'https://raw.githubusercontent.com/CodexHubX/CodeXPaidVersion/refs/heads/main/PixelTowerDefense/I7-1.lua',
     JobID = '',
     TradingMode = false,
+    FreddyFarm = true,
     AutoTrading = {
         ['Enabled'] = false,
         ['Main User'] = 'GlowWormNewt',

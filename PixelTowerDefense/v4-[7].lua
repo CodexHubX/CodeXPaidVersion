@@ -10,7 +10,7 @@ shared.Configs = {
     AutoSkipWave = true,
     Difficulty = 'Easy',
     AutoTrading = {
-        ['Enabled'] = true,
+        ['Enabled'] = false,
         ['Main User'] = 'MoonPinkScar',
         ['JobID'] = '579576fd-d296-4372-890c-79859b2c38f2',
     },

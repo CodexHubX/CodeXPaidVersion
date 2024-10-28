@@ -1,4 +1,4 @@
-shared.Configs = {
+    shared.Configs = {
     Enabled = true,
     RedeemCode = true,
     Speed = 2,  
@@ -6,11 +6,11 @@ shared.Configs = {
     GithubConfigUrl = 'https://raw.githubusercontent.com/CodexHubX/CodeXPaidVersion/refs/heads/main/PixelTowerDefense/v4-%5B3%5D.lua',
     JobID = '',
     TradingMode = false,
-    FreddyFarm = false,
+    FreddyFarm = true,
     AutoSkipWave = true,
     Difficulty = 'Easy',
     AutoTrading = {
-        ['Enabled'] = true,
+        ['Enabled'] = false,
         ['Main User'] = 'DustMoonSun',
         ['JobID'] = 'd7ead404-7a5d-477b-a3ca-503a5940e5ec',
     },

@@ -6,11 +6,11 @@ shared.Configs = {
     GithubConfigUrl = 'https://raw.githubusercontent.com/CodexHubX/CodeXPaidVersion/refs/heads/main/PixelTowerDefense/v4-%5B7%5D.lua',
     JobID = '',
     TradingMode = false,
-    FreddyFarm = false,
+    FreddyFarm = true,
     AutoSkipWave = true,
     Difficulty = 'Easy',
     AutoTrading = {
-        ['Enabled'] = true,
+        ['Enabled'] = false,
         ['Main User'] = 'MoonPinkScar',
         ['JobID'] = '997d8f6f-1929-4576-8a65-220db6fb9ce9',
     },

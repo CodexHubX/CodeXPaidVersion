@@ -7,7 +7,7 @@
     JobID = '',
     TradingMode = false,
     FreddyFarm = true,
-    AutoSkipWave = true,
+    AutoSkipWave = false,
     Difficulty = 'Easy',
     AutoTrading = {
         ['Enabled'] = false,

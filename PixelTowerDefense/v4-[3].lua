@@ -10,8 +10,8 @@
     AutoSkipWave = false,
     Difficulty = 'Easy',
     AutoTrading = {
-        ['Enabled'] = false,
+        ['Enabled'] = true,
         ['Main User'] = 'DustMoonSun',
-        ['JobID'] = 'd7ead404-7a5d-477b-a3ca-503a5940e5ec',
+        ['JobID'] = 'b96c475a-799f-4ee8-8ac2-fea914acedfa',
     },
 };

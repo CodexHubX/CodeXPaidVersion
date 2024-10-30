@@ -10,8 +10,8 @@ shared.Configs = {
     Difficulty = 'Easy',
     AutoSkipWave = false,
     AutoTrading = {
-        ['Enabled'] = false,
+        ['Enabled'] = true,
         ['Main User'] = 'LilAuroraAli',
-        ['JobID'] = 'b680c477-916b-4c9e-add4-88bdc4b9ebc1',
+        ['JobID'] = 'd128476b-c236-45b9-ae97-41eea315895a',
     },
 };
